@@ -2,6 +2,7 @@ package com.kfriday.daeyeong.bound.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -17,4 +18,15 @@ public class Bound {
 
     @Column(nullable = false)
     private Long trackingNo;
+
+    @Builder
+    private Bound(Long trackingNo) {
+        this.trackingNo = trackingNo;
+    }
+
+    public static Bound of(Long trackingNo) {
+        return builder()
+                .trackingNo(trackingNo)
+                .build();
+    }
 }

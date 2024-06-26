@@ -19,3 +19,5 @@ logging:
   level:
     org.hibernate.SQL: debug
     org.hibernate.orm.jdbc.bind: trace
+
+BASE_URL: http://localhost:8080
