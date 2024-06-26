@@ -11,8 +11,4 @@ public enum ImageType {
     ;
 
     private final String description;
-
-    public String description() {
-        return description;
-    }
 }

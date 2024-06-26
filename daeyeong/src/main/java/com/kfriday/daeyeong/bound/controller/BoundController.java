@@ -3,6 +3,7 @@ package com.kfriday.daeyeong.bound.controller;
 import com.kfriday.daeyeong._common.response.success.SuccessResponse;
 import com.kfriday.daeyeong._common.response.success.SuccessType;
 import com.kfriday.daeyeong.bound.dto.request.CreateBoundRequest;
+import com.kfriday.daeyeong.bound.dto.response.ReadBoundResponse;
 import com.kfriday.daeyeong.bound.service.BoundService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,12 @@ public class BoundController implements BoundControllerDocs {
         boundService.create(request);
 
         return  SuccessResponse.of(SuccessType.CREATE_BOUND_SUCCESS);
+    }
+
+    @Override
+    public SuccessResponse<ReadBoundResponse> read(Long boundId) {
+
+        return SuccessResponse.of(boundService.read(boundId), SuccessType.READ_BOUND_SUCCESS);
     }
 
     @Override
