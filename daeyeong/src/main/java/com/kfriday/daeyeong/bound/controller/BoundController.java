@@ -20,4 +20,13 @@ public class BoundController implements BoundControllerDocs {
 
         return  SuccessResponse.of(SuccessType.CREATE_BOUND_SUCCESS);
     }
+
+    @Override
+    public SuccessResponse<Void> delete(Long boundId) {
+
+        System.out.println("boundId : " + boundId);
+        boundService.delete(boundId);
+
+        return SuccessResponse.of(SuccessType.DELETE_BOUND_SUCCESS);
+    }
 }

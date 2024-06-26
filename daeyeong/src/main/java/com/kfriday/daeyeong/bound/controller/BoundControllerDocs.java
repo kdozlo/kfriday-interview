@@ -9,9 +9,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "bounds", description = "입출고")
 @RequestMapping("/api/bounds")
@@ -30,4 +28,20 @@ public interface BoundControllerDocs {
             content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
     @PostMapping
     SuccessResponse<Void> create(@RequestBody @Valid CreateBoundRequest request);
+
+    @Operation(summary = "입출고 삭제",
+            description = """
+                    path variable로 bound-id 넣어주세요. \n
+                    """)
+    @ApiResponse(responseCode = "200",
+            description = "성공")
+    @ApiResponse(responseCode = "404",
+            description = """ 
+                    해당 입출고 정보가 없는 경우
+                    """,
+            content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
+    @DeleteMapping(value = "/{bound-id}")
+    SuccessResponse<Void> delete(@PathVariable(name = "bound-id")
+                                 @Schema(description = "입출고 식별번호", example = "1")
+                                 Long boundId);
 }

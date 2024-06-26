@@ -39,4 +39,16 @@ public class BoundService {
 
         imageRepoitory.saveAll(images);
     }
+
+    @Transactional
+    public void delete(Long id) {
+
+        Bound bound = boundRepository.findById(id).orElseThrow(() -> new BusinessException(ErrorType.BOUND_NOT_FOUND));
+
+        List<Image> images = imageRepoitory.findAllByBound(bound);
+
+        imageRepoitory.deleteAll(images);
+
+        boundRepository.delete(bound);
+    }
 }
