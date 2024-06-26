@@ -43,4 +43,8 @@ public class Image {
                 .bound(bound)
                 .build();
     }
+
+    public void updateType(String type) {
+        this.type = ImageType.valueOf(type);
+    }
 }

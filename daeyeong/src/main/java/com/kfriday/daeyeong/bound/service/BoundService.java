@@ -66,7 +66,8 @@ public class BoundService {
     }
 
     private Bound validBound(Long id) {
-        Bound bound = boundRepository.findById(id).orElseThrow(() -> new BusinessException(ErrorType.BOUND_NOT_FOUND));
-        return bound;
+
+        return boundRepository.findById(id)
+                .orElseThrow(() -> new BusinessException(ErrorType.BOUND_NOT_FOUND));
     }
 }
