@@ -1,4 +1,4 @@
-package com.kfriday.daeyeong.common.response.error;
+package com.kfriday.daeyeong._common.response.error;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

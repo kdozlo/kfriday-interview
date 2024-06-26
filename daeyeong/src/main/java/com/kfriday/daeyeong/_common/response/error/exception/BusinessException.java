@@ -1,6 +1,6 @@
-package com.kfriday.daeyeong.common.response.error.exception;
+package com.kfriday.daeyeong._common.response.error.exception;
 
-import com.kfriday.daeyeong.common.response.error.ErrorType;
+import com.kfriday.daeyeong._common.response.error.ErrorType;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 

@@ -1,6 +1,6 @@
-package com.kfriday.daeyeong.common.response.error;
+package com.kfriday.daeyeong._common.response.error;
 
-import com.kfriday.daeyeong.common.response.error.exception.BusinessException;
+import com.kfriday.daeyeong._common.response.error.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.TypeMismatchException;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import static com.kfriday.daeyeong.common.response.error.ErrorType.*;
+import static com.kfriday.daeyeong._common.response.error.ErrorType.*;
 
 @Slf4j
 @EnableWebMvc

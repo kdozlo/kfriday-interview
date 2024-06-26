@@ -1,4 +1,4 @@
-package com.kfriday.daeyeong.common.response.error;
+package com.kfriday.daeyeong._common.response.error;
 
 import lombok.Builder;
 import lombok.Getter;

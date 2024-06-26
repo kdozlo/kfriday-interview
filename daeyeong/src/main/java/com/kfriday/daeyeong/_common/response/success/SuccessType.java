@@ -1,4 +1,4 @@
-package com.kfriday.daeyeong.common.response.success;
+package com.kfriday.daeyeong._common.response.success;
 
 import lombok.Getter;
 
